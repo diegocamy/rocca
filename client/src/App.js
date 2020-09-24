@@ -6,7 +6,9 @@ import "./App.css";
 function App() {
   const loginWithGoogle = async (response) => {
     const tokenId = await response.tokenId;
-    await axios.post("http://localhost:5000/api/login", { token: tokenId });
+    await axios.post("http://localhost:5000/api/user/login", {
+      token: tokenId,
+    });
   };
 
   return (
