@@ -1,10 +1,12 @@
-import React from 'react';
-import GoogleLogin from 'react-google-login';
-import './App.css';
+import React from "react";
+import axios from "axios";
+import GoogleLogin from "react-google-login";
+import "./App.css";
 
 function App() {
-  const loginWithGoogle = (response) => {
-    console.log(response);
+  const loginWithGoogle = async (response) => {
+    const tokenId = await response.tokenId;
+    await axios.post("http://localhost:5000/api/login", { token: tokenId });
   };
 
   return (
