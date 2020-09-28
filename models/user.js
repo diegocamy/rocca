@@ -5,11 +5,11 @@ const userSchema = new Schema(
   {
     email: {
       type: String,
-      required,
+      required: true,
     },
     nombre: {
       type: String,
-      required,
+      required: true,
     },
   },
   { timestamps: true }
